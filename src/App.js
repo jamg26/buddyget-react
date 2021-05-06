@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route } from "react-router-dom";
+import Home from "./components/Home";
+import { Row, Col, Card, Typography } from "antd";
+import Header from "./components/Header";
+import Expenses from "./components/Expenses";
 
-function App() {
+const { Text } = Typography;
+
+const App = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Row justify="center">
+          <Col lg={8} md={16} sm={24} xs={24}>
+            <Header />
+            <Card>
+              <Route path="/" exact component={Home} />
+              <Route path="/expenses" exact component={Expenses} />
+            </Card>
+            <Text type="secondary" style={{ fontSize: 10 }}>
+              These interfaces are the prototype of Buddyget made with ❤️ by
+              Jamuel Galicia.
+            </Text>
+          </Col>
+        </Row>
+      </BrowserRouter>
+    </>
   );
-}
+};
 
 export default App;
