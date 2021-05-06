@@ -10,7 +10,7 @@ const App = (props) => {
   return (
     <>
       <BrowserRouter>
-        <Row justify="center">
+        <Row justify="center" style={{ marginLeft: 5, marginRight: 5 }}>
           <Col lg={8} md={16} sm={24} xs={24}>
             <Header />
             <Card>
