@@ -1,4 +1,4 @@
-import { Typography, Row, Col, Divider, Button, Space } from "antd";
+import { Typography, Row, Col, Divider, Button } from "antd";
 
 const { Text, Title } = Typography;
 
