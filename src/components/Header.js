@@ -60,6 +60,13 @@ const Header = (props) => {
           >
             Notifications
           </Button>
+          <Button
+            type="link"
+            style={{ padding: 0 }}
+            onClick={() => props.history.push("/planner")}
+          >
+            Planner
+          </Button>
         </Space>
       </Drawer>
     </>
