@@ -11,7 +11,7 @@ const App = (props) => {
     <>
       <BrowserRouter>
         <Row justify="center" style={{ marginLeft: 5, marginRight: 5 }}>
-          <Col lg={8} md={16} sm={24} xs={24}>
+          <Col xl={12} lg={16} md={18} sm={24} xs={24}>
             <Header />
             <Card>
               <Route path="/" exact component={Home} />
