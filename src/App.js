@@ -7,6 +7,8 @@ import Notification from "./components/Notifications";
 import Planner from "./components/Planner";
 import Reminder from "./components/Reminder";
 import Assistance from "./components/Assistance";
+import TableInsights from "./components/Insights/table";
+import GraphInsights from "./components/Insights/graph";
 
 const { Text } = Typography;
 
@@ -24,6 +26,8 @@ const App = (props) => {
               <Route path="/planner" exact component={Planner} />
               <Route path="/reminder" exact component={Reminder} />
               <Route path="/assistance" exact component={Assistance} />
+              <Route path="/insights/table" exact component={TableInsights} />
+              <Route path="/insights/graph" exact component={GraphInsights} />
             </Card>
             <Text type="secondary" style={{ fontSize: 10 }}>
               These interfaces are the prototype of Buddyget made with ❤️ by

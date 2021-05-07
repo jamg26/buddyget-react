@@ -81,6 +81,20 @@ const Header = (props) => {
           >
             Financial Assistance
           </Button>
+          <Button
+            type="link"
+            style={{ padding: 0 }}
+            onClick={() => props.history.push("/insights/table")}
+          >
+            Insights (Table)
+          </Button>
+          <Button
+            type="link"
+            style={{ padding: 0 }}
+            onClick={() => props.history.push("/insights/graph")}
+          >
+            Insights (Graph)
+          </Button>
         </Space>
       </Drawer>
     </>
