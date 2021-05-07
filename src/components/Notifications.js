@@ -58,8 +58,6 @@ const Notification = (props) => {
           <ExclamationOutlined style={{ fontSize: 40, color: "#f5222d" }} />
         </Col>
       </Row>
-
-      <Divider />
     </>
   );
 };
