@@ -1,5 +1,6 @@
 import { Table, Typography, Popover, Space } from "antd";
 import { Link } from "react-router-dom";
+import QueueAnim from "rc-queue-anim";
 
 const { Text } = Typography;
 const Expenses = (props) => {
@@ -105,13 +106,17 @@ const Expenses = (props) => {
 
   return (
     <>
-      <Table
-        title={() => <Text>Expenses</Text>}
-        dataSource={dataSource}
-        columns={columns}
-        size="small"
-        rowKey="key"
-      />
+      <QueueAnim interval={1000}>
+        <div key="1">
+          <Table
+            title={() => <Text>Expenses</Text>}
+            dataSource={dataSource}
+            columns={columns}
+            size="small"
+            rowKey="key"
+          />
+        </div>
+      </QueueAnim>
     </>
   );
 };

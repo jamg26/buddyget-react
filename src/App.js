@@ -9,6 +9,7 @@ import Reminder from "./components/Reminder";
 import Assistance from "./components/Assistance";
 import TableInsights from "./components/Insights/table";
 import GraphInsights from "./components/Insights/graph";
+import "rc-texty/assets/index.css";
 
 const { Text } = Typography;
 
