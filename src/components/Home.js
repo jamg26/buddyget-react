@@ -106,7 +106,7 @@ const Home = (props) => {
           </Button>
           <Button
             variant="success"
-            onClick={() => toast("Shop", "Shop funds...")}
+            onClick={() => toast("Shop", "Shop area...")}
           >
             SHOP
           </Button>
