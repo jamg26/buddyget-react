@@ -1,4 +1,4 @@
-import { Typography, Space, Divider, message } from "antd";
+import { Typography, Space, Divider } from "antd";
 import { QrcodeOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import Scanner from "./Scanner";
