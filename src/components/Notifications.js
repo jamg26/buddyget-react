@@ -6,12 +6,25 @@ import {
 } from "@ant-design/icons";
 import QueueAnim from "rc-queue-anim";
 
-const { Text } = Typography;
+const { Text, Link } = Typography;
 
 const Notification = (props) => {
   return (
     <>
       <QueueAnim interval={500}>
+        <Row justify="space-between" key="0">
+          <Col span={23}>
+            <Text>
+              We noticed that you planned to dine out (Jollibee) (500.00) We
+              found eat all you can at this location for (199.00).{" "}
+              <Link>Show location</Link>
+            </Text>
+          </Col>
+          <Col span={1}>
+            <AlertOutlined style={{ fontSize: 40, color: "green" }} />
+          </Col>
+        </Row>
+        <Divider />
         <Row justify="space-between" key="1">
           <Col span={23}>
             <Text>

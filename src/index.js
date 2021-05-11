@@ -7,10 +7,23 @@ import "antd/dist/antd.css";
 import { ThemeProvider } from "styled-components";
 import { light } from "@pancakeswap-libs/uikit";
 
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
+import reducers from "./reducers";
+import reduxThunk from "redux-thunk";
+
+const store = createStore(
+  reducers,
+  composeWithDevTools(applyMiddleware(reduxThunk))
+);
+
 ReactDOM.render(
-  <ThemeProvider theme={light}>
-    <App />
-  </ThemeProvider>,
+  <Provider store={store}>
+    <ThemeProvider theme={light}>
+      <App />
+    </ThemeProvider>
+  </Provider>,
   document.getElementById("root")
 );
 

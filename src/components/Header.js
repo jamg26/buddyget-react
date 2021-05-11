@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Drawer, PageHeader, Button, Space } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import { withRouter } from "react-router-dom";
+import { Tag } from "@pancakeswap-libs/uikit";
 
 const Header = (props) => {
   const [visible, setVisible] = useState(false);
@@ -27,7 +28,11 @@ const Header = (props) => {
         onBack={showDrawer}
         title="Buddyget"
         subTitle="Your budget buddy."
-        backIcon={<MenuOutlined spin={spin} style={{ color: "#1890ff" }} />}
+        backIcon={
+          <Tag outline>
+            <MenuOutlined spin={spin} />
+          </Tag>
+        }
         style={{ padding: 0 }}
       />
 
@@ -44,7 +49,14 @@ const Header = (props) => {
             style={{ padding: 0 }}
             onClick={() => props.history.push("/")}
           >
-            Home
+            Household Wallet
+          </Button>
+          <Button
+            type="link"
+            style={{ padding: 0 }}
+            onClick={() => props.history.push("/wallet")}
+          >
+            Personal Wallet
           </Button>
           <Button
             type="link"
@@ -52,6 +64,13 @@ const Header = (props) => {
             onClick={() => props.history.push("/expenses")}
           >
             Expenses
+          </Button>
+          <Button
+            type="link"
+            style={{ padding: 0 }}
+            onClick={() => props.history.push("/transfer")}
+          >
+            Transfer
           </Button>
           <Button
             type="link"

@@ -10,12 +10,16 @@ import Assistance from "./components/Assistance";
 import TableInsights from "./components/Insights/table";
 import GraphInsights from "./components/Insights/graph";
 import "rc-texty/assets/index.css";
+import Toast from "./components/Toast";
+import PersonalWallet from "./components/PersonalWallet";
+import Transfer from "./components/transfer";
 
 const { Text } = Typography;
 
 const App = (props) => {
   return (
     <>
+      <Toast />
       <BrowserRouter>
         <Row justify="center" style={{ marginLeft: 5, marginRight: 5 }}>
           <Col xl={12} lg={16} md={18} sm={24} xs={24}>
@@ -29,6 +33,8 @@ const App = (props) => {
               <Route path="/assistance" exact component={Assistance} />
               <Route path="/insights/table" exact component={TableInsights} />
               <Route path="/insights/graph" exact component={GraphInsights} />
+              <Route path="/wallet" exact component={PersonalWallet} />
+              <Route path="/transfer" exact component={Transfer} />
             </Card>
             <Text type="secondary" style={{ fontSize: 10 }}>
               These interfaces are the prototype of Buddyget made with ❤️ by

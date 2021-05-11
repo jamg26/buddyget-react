@@ -13,10 +13,9 @@ TweenOne.plugins.push(ChildrenPlugin);
 
 const { Text, Title } = Typography;
 
-const Home = (props) => {
+const PersonalWallet = (props) => {
   const [isScanning, setScanning] = useState(false);
   const [toggleSavings, setToggleSavings] = useState(true);
-  const [togglePurchases, setTogglePurchases] = useState(false);
 
   if (isScanning) return <Scanner setScanning={setScanning} />;
 
@@ -28,7 +27,7 @@ const Home = (props) => {
           <TweenOne
             animation={{
               Children: {
-                value: 78240.65,
+                value: 13025.25,
                 floatLength: 2,
                 formatMoney: true,
               },
@@ -37,7 +36,7 @@ const Home = (props) => {
           />
         </PText>
         {/* </Title> */}
-        <PText>Household Budget</PText>
+        <PText>Personal Wallet</PText>
       </div>
       <Divider />
       <Space direction="vertical">
@@ -53,21 +52,6 @@ const Home = (props) => {
             }}
           />{" "}
           <Text>Saving Mode</Text>
-        </Space>
-        <Space>
-          <Toggle
-            checked={togglePurchases}
-            onChange={(e) => {
-              setTogglePurchases(!togglePurchases);
-              props.toast(
-                "Switched",
-                `Household purchases ${
-                  !togglePurchases ? "enabled" : "disabled"
-                }`
-              );
-            }}
-          />{" "}
-          <Text>Restrict household purchases</Text>
         </Space>
       </Space>
       <Divider />
@@ -87,16 +71,16 @@ const Home = (props) => {
       <div style={{ textAlign: "center" }}>
         <Space>
           <Button
+            variant="primary"
+            onClick={() => props.history.push("/transfer")}
+          >
+            TRANSFER
+          </Button>
+          <Button
             variant="success"
             onClick={() => props.toast("Shop", "Shop area...")}
           >
             SHOP
-          </Button>
-          <Button
-            variant="subtle"
-            onClick={() => props.toast("Members", "Members area...")}
-          >
-            MEMBERS
           </Button>
           <Button
             variant="danger"
@@ -111,16 +95,16 @@ const Home = (props) => {
       </Divider>
       <QueueAnim interval={500}>
         <div key="1">
-          <Text>-823.00 Purchased by John from GMALL 03/02/21</Text>
+          <Text>+5028.00 Received bonus salary. 05/07/21</Text>
         </div>
         <br />
         <div key="2">
-          <Text>-1540.00 Purchased by Mary from 711 03/02/21</Text>
+          <Text>-146.00 Purchased Chocolate from 711 05/02/21</Text>
         </div>
         <br />
         <div key="3">
           <Text>
-            +5000.00 You added money to the Household Budget. 02/26/21
+            -5000.00 You transfer money to the Household Budget. 05/01/21
           </Text>
         </div>
       </QueueAnim>
@@ -134,4 +118,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps)(PersonalWallet);

@@ -1,4 +1,5 @@
-import { Typography, Select, Space, Divider, Button, message } from "antd";
+import { Typography, Select, Space, Divider, message } from "antd";
+import { Button } from "@pancakeswap-libs/uikit";
 import sapImage from "./images/sap.png";
 
 const { Text } = Typography;
