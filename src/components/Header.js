@@ -3,6 +3,7 @@ import { Drawer, PageHeader, Button, Space } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import { withRouter } from "react-router-dom";
 import { Tag } from "@pancakeswap-libs/uikit";
+import { Cat } from "react-kawaii";
 
 const Header = (props) => {
   const [visible, setVisible] = useState(false);
@@ -26,8 +27,19 @@ const Header = (props) => {
     <>
       <PageHeader
         onBack={showDrawer}
-        title="Buddyget"
-        subTitle="Your budget buddy."
+        title={
+          <>
+            <Space> Buddyget</Space>
+          </>
+        }
+        subTitle={
+          <>
+            <Space>
+              Your budget buddy.
+              <Cat size={25} mood="excited" color="#31d0aa" />
+            </Space>
+          </>
+        }
         backIcon={
           <Tag outline>
             <MenuOutlined spin={spin} />
