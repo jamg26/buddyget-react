@@ -13,6 +13,7 @@ import "rc-texty/assets/index.css";
 import Toast from "./components/Toast";
 import PersonalWallet from "./components/PersonalWallet";
 import Transfer from "./components/transfer";
+// import Transferring from "./components/transfer_anim";
 
 const { Text } = Typography;
 
@@ -35,6 +36,7 @@ const App = (props) => {
               <Route path="/insights/graph" exact component={GraphInsights} />
               <Route path="/wallet" exact component={PersonalWallet} />
               <Route path="/transfer" exact component={Transfer} />
+              {/* <Route path="/transferring" exact component={Transferring} /> */}
             </Card>
             <Text type="secondary" style={{ fontSize: 10 }}>
               These interfaces are the prototype of Buddyget made with ❤️ by

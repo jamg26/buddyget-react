@@ -3,6 +3,7 @@ import { Space } from "antd";
 import { useState } from "react";
 import { Divider } from "antd";
 import { connect } from "react-redux";
+import Transferring from "./transfer_anim";
 
 const Transfer = (props) => {
   const [transferMethod, setTransferMethod] = useState("household");
@@ -10,6 +11,7 @@ const Transfer = (props) => {
     userTransferValue: "",
     houseTransferValue: "",
     userPhone: "",
+    transferring: false,
   });
 
   const handleChange = (e) => {
@@ -45,11 +47,26 @@ const Transfer = (props) => {
     }
 
     setState({
-      userTransferValue: "",
-      houseTransferValue: "",
-      userPhone: "",
+      ...state,
+      transferring: true,
+      type,
+      // userTransferValue: "",
+      // houseTransferValue: "",
+      // userPhone: "",
     });
   };
+
+  if (state.transferring === true)
+    return (
+      <Transferring
+        to={state.type === "house" ? "household_11022020" : state.userPhone}
+        amt={
+          state.type === "house"
+            ? state.houseTransferValue
+            : state.userTransferValue
+        }
+      />
+    );
 
   return (
     <>
